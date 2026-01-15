@@ -16,7 +16,45 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Anugrah M V | Full Stack Engineer",
-  description: "Portfolio of Anugrah M V - Full Stack Developer & AI Enthusiast",
+  description: "Portfolio of Anugrah M V - Full Stack Developer & AI Enthusiast specializing in modern web applications, AI-powered solutions, and scalable systems.",
+  keywords: ["Full Stack Developer", "AI Engineer", "React", "Next.js", "TypeScript", "Portfolio"],
+  authors: [{ name: "Anugrah M V" }],
+  creator: "Anugrah M V",
+  publisher: "Anugrah M V",
+  metadataBase: new URL('https://your-domain.com'),
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://your-domain.com',
+    title: 'Anugrah M V | Full Stack Engineer',
+    description: 'Portfolio of Anugrah M V - Full Stack Developer & AI Enthusiast specializing in modern web applications, AI-powered solutions, and scalable systems.',
+    siteName: 'Anugrah M V Portfolio',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Anugrah M V - Full Stack Engineer',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Anugrah M V | Full Stack Engineer',
+    description: 'Portfolio of Anugrah M V - Full Stack Developer & AI Enthusiast',
+    images: ['/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
