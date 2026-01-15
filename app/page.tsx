@@ -210,11 +210,33 @@ export default function Home() {
           <ScrollFloat animationDuration={0.8} scrollStart="top 85%">
             <h2 className="text-5xl font-bold text-white mb-12 tracking-tight">Skills</h2>
           </ScrollFloat>
-          <div className="flex flex-wrap gap-4">
-            {["Python", "JavaScript", "React", "Node.js", "Django", "FastAPI", "Next.js", "GSAP", "Tailwind CSS", "MySQL", "MongoDB", "AI/ML"].map((skill, index) => (
-              <ScrollFloat key={skill} animationDuration={0.5} stagger={index * 0.05} scrollStart="top 90%">
-                <span className="px-6 py-3 glass rounded-full text-white/80 font-medium inline-block">
-                  {skill}
+          <div className="grid grid-cols-2 gap-3 md:flex md:flex-wrap md:justify-center md:gap-4">
+            {[
+              { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+              { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/white" },
+              { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+              { name: "FastAPI", icon: "https://cdn.simpleicons.org/fastapi/009688" },
+              { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/4169E1" },
+              { name: "Docker", icon: "https://cdn.simpleicons.org/docker/2496ED" },
+              { name: "AWS", icon: "https://cdn.simpleicons.org/amazonwebservices/FF9900" },
+              { name: "Python", icon: "https://cdn.simpleicons.org/python/3776AB" },
+              { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+              { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
+              { name: "Django", icon: "https://cdn.simpleicons.org/django/092E20" },
+              { name: "GSAP", icon: "https://cdn.simpleicons.org/greensock/88CE02" },
+              { name: "MySQL", icon: "https://cdn.simpleicons.org/mysql/4479A1" },
+              { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
+              { name: "AI/ML", icon: "https://cdn.simpleicons.org/openai/412991" } // Using OpenAI icon with brand color
+            ].map((skill, index) => (
+              <ScrollFloat key={skill.name} animationDuration={0.5} stagger={index * 0.05} scrollStart="top 90%">
+                <span className="px-4 py-3 md:px-8 md:py-4 rounded-full text-base md:text-lg text-white/90 font-medium flex w-full justify-center items-center gap-2 md:gap-4 
+                  bg-gradient-to-br from-white/10 to-white/5 
+                  border border-white/10 hover:border-white/30 
+                  backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] 
+                  hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.1)] 
+                  transition-all duration-300 hover:-translate-y-1 hover:scale-105 cursor-default whitespace-nowrap">
+                  <img src={skill.icon} alt={skill.name} className="w-6 h-6 md:w-8 md:h-8 object-contain" />
+                  {skill.name}
                 </span>
               </ScrollFloat>
             ))}
