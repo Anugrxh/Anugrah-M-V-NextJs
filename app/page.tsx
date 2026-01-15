@@ -14,13 +14,14 @@ import ElectricBorder from '@/components/ElectricBorder';
 import { Star } from 'lucide-react';
 import ShinyText from '@/components/ShinyText';
 import ContactForm from '@/components/ContactForm';
+import Footer from '@/components/Footer';
 
 export default function Home() {
 
   return (
-    <div className="px-6 py-40">
+    <div id="about" className="px-6 pt-40 pb-0">
       <div className="flex flex-col gap-32 max-w-7xl mx-auto">
-        <section id="about" className="min-h-[60vh] flex flex-col justify-center">
+        <section className="min-h-[60vh] flex flex-col justify-center">
           <div className="text-white font-bold leading-[0.9]">
             <TextType
               text={["ANUGRAH M V"]}
@@ -183,7 +184,7 @@ export default function Home() {
                 handle: 'React, Node.js, Express, Tailwind CSS, Gemini AI',
                 borderColor: '#4F46E5',
                 gradient: 'linear-gradient(145deg, rgba(79, 70, 229, 0.4), rgba(0,0,0,0.8))',
-                url: '#',
+                url: 'https://github.com/Anugrxh',
                 description: [
                   "Built a complete interview training platform with modern frontend and backend",
                   "Integrated facial emotion analysis using FER2013 dataset",
@@ -197,7 +198,7 @@ export default function Home() {
                 handle: 'React, Python, Machine Learning, NASA Datasets',
                 borderColor: '#F59E0B',
                 gradient: 'linear-gradient(145deg, rgba(245, 158, 11, 0.4), rgba(0,0,0,0.8))',
-                url: '#',
+                url: 'https://github.com/Anugrxh',
                 description: [
                   "Built an AI system in 48 hours to classify exoplanets using NASA datasets",
                   "Engineered ML model using 12 planetary features",
@@ -211,7 +212,7 @@ export default function Home() {
                 handle: 'React, Node.js, Express, Gemini AI, Tailwind CSS',
                 borderColor: '#10B981',
                 gradient: 'linear-gradient(145deg, rgba(16, 185, 129, 0.4), rgba(0,0,0,0.8))',
-                url: '#',
+                url: 'https://github.com/Anugrxh',
                 description: [
                   "Developed an AI-powered chat application with real-time messaging",
                   "Integrated Gemini LLM with context retention",
@@ -225,7 +226,7 @@ export default function Home() {
                 handle: 'React, Flask, YOLO, A* Algorithm',
                 borderColor: '#EF4444',
                 gradient: 'linear-gradient(145deg, rgba(239, 68, 68, 0.4), rgba(0,0,0,0.8))',
-                url: '#',
+                url: 'https://github.com/Anugrxh',
                 description: [
                   "Built an AI model to detect potholes using YOLO",
                   "Implemented A* pathfinding algorithm for safe route calculation",
@@ -375,7 +376,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="min-h-[80vh] border-t border-white/5 pt-20 pb-40">
+        <section id="contact" className="min-h-[80vh] border-t border-white/5 pt-20 pb-32">
           <ScrollFloat animationDuration={0.8} scrollStart="top 85%">
             <h2 className="text-5xl font-bold text-white mb-12 tracking-tight text-center">
               <ShinyText text="Get in Touch" disabled={false} speed={3} />
@@ -397,6 +398,7 @@ export default function Home() {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   )
 }

@@ -26,16 +26,28 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const scrollToTop = (e: React.MouseEvent) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setIsOpen(false);
+    };
+
     return (
         <nav
             className={cn(
-                "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-                scrolled ? "py-3" : "py-6"
+                "fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-6",
+                scrolled
+                    ? "py-3 bg-black/40 backdrop-blur-xl border-b border-white/5"
+                    : "py-6 bg-transparent"
             )}
         >
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="text-2xl font-bold text-white tracking-tighter">
+                <Link
+                    href="/"
+                    onClick={scrollToTop}
+                    className="text-2xl font-bold text-white tracking-tighter"
+                >
                     ANUGRAH <span className="text-white/40">M V</span>
                 </Link>
 
