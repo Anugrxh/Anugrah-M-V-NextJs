@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import GlassButton from "../ui/GlassButton";
+import StarBorder from "../StarBorder";
 
 const navLinks = [
     { name: "About", href: "#about" },
@@ -54,7 +54,9 @@ const Navbar = () => {
 
                 {/* Contact Button (Desktop) */}
                 <div className="hidden md:block">
-                    <GlassButton href="#contact">Contact Me</GlassButton>
+                    <StarBorder as={Link} href="#contact" color="cyan" speed="5s">
+                        Contact Me
+                    </StarBorder>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -93,9 +95,9 @@ const Navbar = () => {
                         ))}
                     </div>
                     <div className="mt-auto">
-                        <GlassButton href="#contact" className="w-full" onClick={() => setIsOpen(false)}>
+                        <StarBorder as={Link} href="#contact" color="cyan" speed="5s" className="w-full text-center" onClick={() => setIsOpen(false)}>
                             Contact Me
-                        </GlassButton>
+                        </StarBorder>
                     </div>
                 </div>
             </div>

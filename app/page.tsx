@@ -7,11 +7,15 @@ import TextType from "@/components/TextType";
 import TiltedCard from '@/components/ui/TiltedCard';
 // @ts-ignore
 import ChromaGrid from '@/components/ui/ChromaGrid';
+import Counter from '@/components/ui/Counter';
+import MagicBento from '@/components/MagicBento';
+import SpotlightCard from '@/components/SpotlightCard';
+import ElectricBorder from '@/components/ElectricBorder';
+import { Star } from 'lucide-react';
+import ShinyText from '@/components/ShinyText';
+import ContactForm from '@/components/ContactForm';
 
 export default function Home() {
-  const handleAnimationComplete = () => {
-    console.log('Animation completed!');
-  };
 
   return (
     <div className="px-6 py-40">
@@ -41,10 +45,37 @@ export default function Home() {
           </ScrollFloat>
         </section>
 
+        {/* Stats Section */}
+        <section id="stats" className="border-t border-white/5 pt-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { label: "Years of Experience", value: 1, suffix: "+" },
+              { label: "Satisfied Clients", value: 10, suffix: "+" },
+              { label: "Completed Projects", value: 30, suffix: "+" },
+              { label: "Client Retention Rate", value: 99, suffix: "%" }
+            ].map((stat, index) => (
+              <ScrollFloat key={index} animationDuration={0.5} stagger={index * 0.1} scrollStart="top 90%">
+                <div className="flex flex-col items-center justify-center p-6 rounded-2xl 
+                  bg-gradient-to-br from-white/10 to-white/5 
+                  border border-white/10 hover:border-emerald-500/30
+                  backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] 
+                  transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_8px_32px_0_rgba(16,185,129,0.2)] group cursor-default">
+                  <div className="text-4xl md:text-5xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors flex items-center">
+                    <Counter value={stat.value} suffix={stat.suffix} />
+                  </div>
+                  <span className="text-sm md:text-base text-white/60 text-center font-medium group-hover:text-white/90 transition-colors">{stat.label}</span>
+                </div>
+              </ScrollFloat>
+            ))}
+          </div>
+        </section>
+
         {/* Experience Section */}
         <section id="experience" className="min-h-[80vh] border-t border-white/5 pt-20">
           <ScrollFloat animationDuration={0.8} scrollStart="top 85%">
-            <h2 className="text-5xl font-bold text-white mb-12 tracking-tight">Experience</h2>
+            <h2 className="text-5xl font-bold text-white mb-12 tracking-tight text-center">
+              <ShinyText text="Experience" disabled={false} speed={3} />
+            </h2>
           </ScrollFloat>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Snapshare */}
@@ -139,7 +170,9 @@ export default function Home() {
         {/* Projects Section */}
         <section id="projects" className="min-h-[80vh] border-t border-white/5 pt-20">
           <ScrollFloat animationDuration={0.8} scrollStart="top 85%">
-            <h2 className="text-5xl font-bold text-white mb-12 tracking-tight">Projects</h2>
+            <h2 className="text-5xl font-bold text-white mb-12 tracking-tight text-center">
+              <ShinyText text="Projects" disabled={false} speed={3} />
+            </h2>
           </ScrollFloat>
 
           <ChromaGrid
@@ -208,7 +241,9 @@ export default function Home() {
         {/* Skills Section */}
         <section id="skills" className="min-h-[80vh] border-t border-white/5 pt-20">
           <ScrollFloat animationDuration={0.8} scrollStart="top 85%">
-            <h2 className="text-5xl font-bold text-white mb-12 tracking-tight">Skills</h2>
+            <h2 className="text-5xl font-bold text-white mb-12 tracking-tight text-center">
+              <ShinyText text="Skills" disabled={false} speed={3} />
+            </h2>
           </ScrollFloat>
           <div className="grid grid-cols-2 gap-3 md:flex md:flex-wrap md:justify-center md:gap-4">
             {[
@@ -243,37 +278,123 @@ export default function Home() {
           </div>
         </section>
 
+
+
         {/* Education Section */}
-        <section id="education" className="min-h-[80vh] border-t border-white/5 pt-20">
+        <section id="education" className="min-h-[60vh] border-t border-white/5 pt-20">
           <ScrollFloat animationDuration={0.8} scrollStart="top 85%">
-            <h2 className="text-5xl font-bold text-white mb-12 tracking-tight">Education</h2>
+            <h2 className="text-5xl font-bold text-white mb-12 tracking-tight text-center">
+              <ShinyText text="Education" disabled={false} speed={3} />
+            </h2>
           </ScrollFloat>
-          <div className="flex flex-col gap-8">
-            <ScrollFloat animationDuration={1} scrollStart="top 80%">
-              <div>
-                <h3 className="text-2xl font-bold text-white">MCA — Kannur University</h3>
-                <p className="text-white/50">2024 — 2026 | CGPA: 8.78</p>
-              </div>
-            </ScrollFloat>
-            <ScrollFloat animationDuration={1} scrollStart="top 80%">
-              <div>
-                <h3 className="text-2xl font-bold text-white">BCA — Kannur University</h3>
-                <p className="text-white/50">2020 — 2023 | CGPA: 7.36</p>
-              </div>
-            </ScrollFloat>
-          </div>
+          <MagicBento
+            cards={[
+              {
+                title: "Kannur University",
+                label: "Master of Computer Applications",
+                description: (
+                  <div className="flex flex-col gap-1">
+                    <span>Jan 2024 — May 2026</span>
+                    <span className="text-white/80 font-semibold">CGPA: 8.78</span>
+                  </div>
+                ),
+                color: "rgba(255,255,255,0.05)"
+              },
+              {
+                title: "Kannur University",
+                label: "Bachelor of Computer Applications",
+                description: (
+                  <div className="flex flex-col gap-1">
+                    <span>Jan 2020 — May 2023</span>
+                    <span className="text-white/80 font-semibold">CGPA: 7.36</span>
+                  </div>
+                ),
+                color: "rgba(255,255,255,0.05)"
+              }
+            ]}
+            enableStars={true}
+            enableBorderGlow={true}
+            enableSpotlight={true}
+            glowColor="16, 185, 129" // Emerald glow
+          />
+        </section>
+
+
+
+        {/* Testimonials Section */}
+        <section id="testimonials" className="min-h-[60vh] border-t border-white/5 pt-20">
+          <ScrollFloat animationDuration={0.8} scrollStart="top 85%">
+            <h2 className="text-5xl font-bold text-white mb-12 tracking-tight text-center">
+              <ShinyText text="Testimonials" disabled={false} speed={3} />
+            </h2>
+          </ScrollFloat>
+          <ScrollFloat animationDuration={0.8} scrollStart="top 80%">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                {
+                  text: "Absolutely loved the experience! Everything was smooth, intuitive, and the final result exceeded my expectations. Highly recommend to anyone looking for top-notch service and quality.",
+                  author: "Amal",
+                  location: "Bangalore",
+                  color: "rgba(0, 229, 255, 0.2)", // Cyan
+                  hex: "#00E5FF"
+                },
+                {
+                  text: "Collaborating with Anugrah was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Anugrah's enthusiasm for every facet of development truly stands out.",
+                  author: "Gopika",
+                  location: "Kannur",
+                  color: "rgba(255, 0, 128, 0.2)", // Pink/Magenta
+                  hex: "#FF0080"
+                },
+                {
+                  text: "Anugrah was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
+                  author: "Akash Raj",
+                  location: "Kannur",
+                  color: "rgba(0, 255, 128, 0.2)", // Emerald/Green
+                  hex: "#00FF80"
+                }
+              ].map((t, i) => (
+                <ElectricBorder key={i} color={t.hex} borderRadius={24} className="h-full">
+                  <SpotlightCard className="h-full flex flex-col justify-between bg-white/5 backdrop-blur-xl rounded-[inherit]" spotlightColor={t.color as any}>
+                    <div>
+                      <div className="flex gap-1 mb-4 text-orange-400">
+                        {[...Array(5)].map((_, starIndex) => (
+                          <Star key={starIndex} size={16} fill="currentColor" />
+                        ))}
+                      </div>
+                      <p className="text-white/80 leading-relaxed mb-6 font-light italic">"{t.text}"</p>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-white mb-1">{t.author}</h4>
+                      <p className="text-sm text-white/40 font-mono">@{t.location}</p>
+                    </div>
+                  </SpotlightCard>
+                </ElectricBorder>
+              ))}
+            </div>
+          </ScrollFloat>
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="min-h-[60vh] border-t border-white/5 pt-20 pb-40">
+        <section id="contact" className="min-h-[80vh] border-t border-white/5 pt-20 pb-40">
           <ScrollFloat animationDuration={0.8} scrollStart="top 85%">
-            <h2 className="text-5xl font-bold text-white mb-12 tracking-tight">Get in Touch</h2>
+            <h2 className="text-5xl font-bold text-white mb-12 tracking-tight text-center">
+              <ShinyText text="Get in Touch" disabled={false} speed={3} />
+            </h2>
           </ScrollFloat>
-          <ScrollFloat animationDuration={1} scrollStart="top 85%">
-            <p className="text-2xl text-white/70">
-              amvanugrah@gmail.com
-            </p>
-          </ScrollFloat>
+
+          <div className="max-w-3xl mx-auto w-full">
+            <ScrollFloat animationDuration={1} scrollStart="top 85%">
+              <div className="text-center space-y-8">
+                <div>
+                  {/* <h3 className="text-3xl font-bold text-white mb-4">Let&apos;s collaborate</h3> */}
+
+
+                </div>
+
+                <ContactForm />
+              </div>
+            </ScrollFloat>
+          </div>
         </section>
       </div>
     </div>
