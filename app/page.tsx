@@ -5,6 +5,8 @@ import ScrollFloat from "@/components/ui/ScrollFloat";
 // @ts-ignore
 import TextType from "@/components/TextType";
 import TiltedCard from '@/components/ui/TiltedCard';
+// @ts-ignore
+import ChromaGrid from '@/components/ui/ChromaGrid';
 
 export default function Home() {
   const handleAnimationComplete = () => {
@@ -139,20 +141,68 @@ export default function Home() {
           <ScrollFloat animationDuration={0.8} scrollStart="top 85%">
             <h2 className="text-5xl font-bold text-white mb-12 tracking-tight">Projects</h2>
           </ScrollFloat>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <ScrollFloat animationDuration={1} stagger={0.1} scrollStart="top 80%">
-              <div className="glass-morphism p-8 rounded-3xl h-full">
-                <h3 className="text-2xl font-bold text-white">PREPWISE</h3>
-                <p className="text-white/50 mt-2">AI Powered Interview Training Platform</p>
-              </div>
-            </ScrollFloat>
-            <ScrollFloat animationDuration={1} stagger={0.1} scrollStart="top 80%">
-              <div className="glass-morphism p-8 rounded-3xl h-full">
-                <h3 className="text-2xl font-bold text-white">NASA Space Apps</h3>
-                <p className="text-white/50 mt-2">Exoplanet Hunter AI - Regional Winner</p>
-              </div>
-            </ScrollFloat>
-          </div>
+
+          <ChromaGrid
+            items={[
+              {
+                title: 'PREPWISE',
+                subtitle: 'AI Powered Interview Training Platform',
+                handle: 'React, Node.js, Express, Tailwind CSS, Gemini AI',
+                borderColor: '#4F46E5',
+                gradient: 'linear-gradient(145deg, rgba(79, 70, 229, 0.4), rgba(0,0,0,0.8))',
+                url: '#',
+                description: [
+                  "Built a complete interview training platform with modern frontend and backend",
+                  "Integrated facial emotion analysis using FER2013 dataset",
+                  "Implemented Gemini AI for intelligent feedback and answer evaluation",
+                  "Added speech-to-text and text-to-speech for interactive interviews"
+                ]
+              },
+              {
+                title: 'EXOPLANET HUNTER AI',
+                subtitle: 'NASA Space Apps Hackathon Project',
+                handle: 'React, Python, Machine Learning, NASA Datasets',
+                borderColor: '#F59E0B',
+                gradient: 'linear-gradient(145deg, rgba(245, 158, 11, 0.4), rgba(0,0,0,0.8))',
+                url: '#',
+                description: [
+                  "Built an AI system in 48 hours to classify exoplanets using NASA datasets",
+                  "Engineered ML model using 12 planetary features",
+                  "Developed 2D orbital visualizations and habitability analysis",
+                  "Delivered a working prototype under extreme time constraints"
+                ]
+              },
+              {
+                title: 'CHATFREE',
+                subtitle: 'Full Stack AI Chat Application',
+                handle: 'React, Node.js, Express, Gemini AI, Tailwind CSS',
+                borderColor: '#10B981',
+                gradient: 'linear-gradient(145deg, rgba(16, 185, 129, 0.4), rgba(0,0,0,0.8))',
+                url: '#',
+                description: [
+                  "Developed an AI-powered chat application with real-time messaging",
+                  "Integrated Gemini LLM with context retention",
+                  "Implemented secure authentication using JWT and session validation",
+                  "Added rate limiting and chat history management"
+                ]
+              },
+              {
+                title: 'KERALA ROAD SURVIVAL',
+                subtitle: 'AI Pothole Detection System',
+                handle: 'React, Flask, YOLO, A* Algorithm',
+                borderColor: '#EF4444',
+                gradient: 'linear-gradient(145deg, rgba(239, 68, 68, 0.4), rgba(0,0,0,0.8))',
+                url: '#',
+                description: [
+                  "Built an AI model to detect potholes using YOLO",
+                  "Implemented A* pathfinding algorithm for safe route calculation",
+                  "Developed Flask REST APIs for inference",
+                  "Created real-time visualizations using React frontend"
+                ]
+              }
+            ]}
+            className="w-full h-auto"
+          />
         </section>
 
         {/* Skills Section */}
