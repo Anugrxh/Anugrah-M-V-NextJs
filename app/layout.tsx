@@ -65,10 +65,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen relative`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen relative overflow-x-hidden`}
         suppressHydrationWarning
       >
-        <div className="fixed inset-0 z-0 bg-black">
+        <div className="fixed inset-0 z-0 bg-black will-change-transform">
           <ColorBends
             colors={["#ff5c7a", "#8a5cff", "#00ffd1"]}
             rotation={30}
@@ -83,7 +83,7 @@ export default function RootLayout({
             className="w-full h-full"
           />
         </div>
-        <div className="relative z-10">
+        <div className="relative z-10 min-h-screen">
           <Navbar />
           <main>{children}</main>
         </div>

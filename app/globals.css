@@ -123,9 +123,17 @@
     @apply border-border outline-ring/50;
   }
 
+  html {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
   body {
-    @apply bg-transparent text-foreground selection:bg-white/20;
+    @apply bg-black text-foreground selection:bg-white/20;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
   }
 }
 
