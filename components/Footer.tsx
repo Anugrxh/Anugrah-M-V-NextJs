@@ -7,7 +7,7 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="w-full border-t border-white/5 pt-16 pb-12 bg-black/20 backdrop-blur-md">
+        <footer className="w-full border-t border-white/5 pt-16 pb-12 bg-black/20 backdrop-blur-md relative z-20">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="flex flex-col md:flex-row justify-between items-start gap-12">
                     {/* Left Side: Brand & Contact */}

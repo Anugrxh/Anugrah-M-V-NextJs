@@ -376,7 +376,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="min-h-[80vh] border-t border-white/5 pt-20 pb-32">
+        <section id="contact" className="min-h-[80vh] border-t border-white/5 pt-20 pb-20">
           <ScrollFloat animationDuration={0.8} scrollStart="top 85%">
             <h2 className="text-5xl font-bold text-white mb-12 tracking-tight text-center">
               <ShinyText text="Get in Touch" disabled={false} speed={3} />
