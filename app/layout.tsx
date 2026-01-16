@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: 'Anugrah M V Portfolio',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/anugrah.jpg',
         width: 1200,
         height: 630,
         alt: 'Anugrah M V - Full Stack Engineer',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Anugrah M V | Full Stack Engineer',
     description: 'Portfolio of Anugrah M V - Full Stack Developer & AI Enthusiast',
-    images: ['/og-image.jpg'],
+    images: ['/anugrah.jpg'],
   },
   robots: {
     index: true,
