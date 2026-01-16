@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInView, useMotionValue, useSpring } from "motion/react";
 
 interface CounterProps {
@@ -23,10 +23,11 @@ export default function Counter({
     const ref = useRef<HTMLSpanElement>(null);
     const motionValue = useMotionValue(direction === "down" ? value : 0);
     const springValue = useSpring(motionValue, {
-        damping: 30, // Controls bounciness (higher = less bouncy)
-        stiffness: 70, // Controls speed/tightness
+        damping: 30,
+        stiffness: 70,
     });
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isInView = useInView(ref, { once: true, margin: "-50px" });
+    const [displayValue, setDisplayValue] = useState(prefix + (direction === "down" ? value : 0).toFixed(decimalPlaces) + suffix);
 
     useEffect(() => {
         if (isInView) {
@@ -35,14 +36,12 @@ export default function Counter({
     }, [isInView, motionValue, direction, value]);
 
     useEffect(() => {
-        springValue.on("change", (latest) => {
-            if (ref.current) {
-                ref.current.textContent = prefix + latest.toFixed(decimalPlaces) + suffix;
-            }
+        const unsubscribe = springValue.on("change", (latest) => {
+            setDisplayValue(prefix + latest.toFixed(decimalPlaces) + suffix);
         });
 
-        return () => springValue.destroy(); // Cleanup listener
+        return () => unsubscribe();
     }, [springValue, prefix, suffix, decimalPlaces]);
 
-    return <span ref={ref} className={className} />;
+    return <span ref={ref} className={className}>{displayValue}</span>;
 }
