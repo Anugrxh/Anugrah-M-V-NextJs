@@ -126,7 +126,6 @@
   html {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    height: 100%;
   }
 
   body {
@@ -135,7 +134,6 @@
     overflow-x: hidden;
     position: relative;
     min-height: 100vh;
-    height: 100%;
   }
 }
 
