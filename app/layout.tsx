@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Anugrah M V" }],
   creator: "Anugrah M V",
   publisher: "Anugrah M V",
-  metadataBase: new URL('https://your-domain.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://your-domain.com',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
     title: 'Anugrah M V | Full Stack Engineer',
     description: 'Portfolio of Anugrah M V - Full Stack Developer & AI Enthusiast specializing in modern web applications, AI-powered solutions, and scalable systems.',
     siteName: 'Anugrah M V Portfolio',
