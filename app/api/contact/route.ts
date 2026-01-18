@@ -93,7 +93,7 @@ export async function POST(req: Request) {
             from: `"${process.env.SMTP_NAME || 'Portfolio'}" <${process.env.SMTP_MAIL}>`,
             to: process.env.SMTP_MAIL,
             replyTo: sanitizedEmail,
-            subject: `🚀 New Portfolio Message from ${sanitizedName}`,
+            subject: ` New Portfolio Message from ${sanitizedName}`,
             text: `Name: ${sanitizedName}\nEmail: ${sanitizedEmail}\n\nMessage:\n${sanitizedMessage}`,
             html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 10px; color: #333;">

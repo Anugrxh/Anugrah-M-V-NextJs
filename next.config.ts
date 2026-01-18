@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   // Production optimizations
   compress: true,
   poweredByHeader: false,
+  output: 'standalone',
 
   // Security headers
   async headers() {
